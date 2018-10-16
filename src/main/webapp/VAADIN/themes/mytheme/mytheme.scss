@@ -1,0 +1,164 @@
+// If you edit this file you need to compile the theme. See README.md for details.
+
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+@import "../valo/valo.scss";
+
+@mixin mytheme {
+  @include valo;
+
+  // Insert your own theme rules here
+  // menubar
+  .header-layout {
+    background-color: #62cae4;
+    border: none;
+    padding-left: 36px;
+    padding-right: 36px;
+    .v-button {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      color: white;
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      height: 32px;
+      text-align: center;
+      text-transform: uppercase;
+      outline: none;
+    }
+    .v-button:hover {
+      background-color: #c3edf9;
+    }
+    .v-button:after {
+      content: none;
+    }
+    .v-label {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  // main view
+  .main-layout {
+    margin: 0;
+    height: 100%;
+    background: white;
+    background-size: auto auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: #00a4ff;
+  }
+
+  .view-layout {
+    background-color: aliceblue;
+  }
+
+  .modal-window {
+    // window header
+    .v-window-outerheader {
+      background-color: #73c1f0;
+      margin-left: -10px;
+    }
+    // window caption text
+    .v-window-header {
+      color: #f9f9f9;
+      font-weight: bold;
+    }
+    // window contents
+    .v-window-contents {
+      background-color: #f9f9f9;
+    }
+    // window close button
+    .v-window-closebox {
+      background-color: #73c1f0;
+    }
+    // textfield caption
+    .v-caption {
+      color: royalblue;
+      font-size: 105%;
+    }
+    // textfield
+    .v-textfield {
+      color: royalblue;
+      background-color: aliceblue;
+    }
+    // combobox
+    .v-filterselect-input {
+      color: #7598ee;
+    }
+    // button background
+    .v-button {
+      @include valo-button-style($background-color: #ddf8ff);
+    }
+    // button caption
+    .v-button-caption {
+      color: royalblue;
+      font-size: 105%;
+    }
+  }
+
+  // filter panel
+  .v-panel {
+    .v-textfield {
+      color: slategray;
+    }
+    .v-button {
+      color: slategray;
+    }
+  }
+  .v-panel-caption {
+    background: #d9edf7;
+    font-size: 14px;
+    color: slategray;
+    text-transform: uppercase;
+  }
+
+  .v-table-header-wrap {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: #d9edf7;
+  }
+  .v-table-caption-container {
+    font-size: 14px;
+    color: slategray;
+    text-transform: uppercase;
+  }
+
+  // notification
+  .v-Notification.mytheme {
+    background: #f9f9f9;
+    border: 5px solid #62cae4;
+    color: #3888ab;
+  }
+}
